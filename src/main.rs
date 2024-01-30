@@ -1,10 +1,8 @@
 use std::env;
 use std::thread;
 use std::time::Duration;
-use procedural_generator::ProceduralGenerator;
 use loading_bar::*; // Import the loading_bar module
 use procedural_generator::*; // Import the procedural_generator module
-
 
 mod loading_bar;
 mod procedural_generator;

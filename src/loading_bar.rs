@@ -14,7 +14,7 @@ pub fn loading_bar1(message: &str, length: u32, speed: f64) {
     let mut scrambled: Vec<char> = final_word.clone();
     scrambled.shuffle(&mut rand::thread_rng());
 
-    let label_speed = speed/2.0;
+    let label_speed = &speed/4.0;
 
     for i in 0..final_word.len() {
         while final_word[i] != scrambled[i] {
@@ -23,7 +23,7 @@ pub fn loading_bar1(message: &str, length: u32, speed: f64) {
             scrambled.push(temp);
             print!("\r{}", scrambled.iter().collect::<String>());
             io::stdout().flush().unwrap();
-            thread::sleep(Duration::from_secs_f64(speed));
+            thread::sleep(Duration::from_secs_f64(label_speed));
         }
     }
     print!("\n");
